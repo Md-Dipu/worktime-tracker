@@ -1,0 +1,11 @@
+{
+  "name": "worktime-tracker",
+  "version": "0.1.0-beta",
+  "description": "Lightweight app to log and track work hours effortlessly",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [],
+  "author": "Md. Dipu <srdipu@hotmail.com>",
+  "license": "MIT"
+}
