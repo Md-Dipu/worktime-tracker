@@ -3,13 +3,19 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "tsc"
   },
   "devDependencies": {
+    "@types/commander": "^2.12.0",
+    "@types/node": "^22.10.2",
     "eslint": "^8.57.1",
     "prettier": "^3.4.2",
-    "ts-node-dev": "^2.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.7"
   }
 }
