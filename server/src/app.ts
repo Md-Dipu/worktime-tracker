@@ -5,11 +5,15 @@ import dotenv from 'dotenv';
 
 import 'colors';
 
+import authRoutes from './routes/auth';
+
 dotenv.config();
 
 const app: Application = express();
 app.use(cors());
 app.use(express.json());
+
+app.use('/api/auth', authRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI as string)

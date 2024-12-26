@@ -10,10 +10,11 @@
     "es2021": true
   },
   "rules": {
-    "prettier/prettier": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-unused-vars": "error",
-    "require-jsdoc": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "new-cap": "off",
+    "prettier/prettier": "error",
+    "require-jsdoc": "off"
   },
   "plugins": ["prettier", "@typescript-eslint"]
 }
