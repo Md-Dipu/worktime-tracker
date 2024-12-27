@@ -55,4 +55,38 @@ router.get('/logs', authenticate, async (req, res) => {
   }
 });
 
+router.post('/notes', async (req, res) => {
+  const { sessionId, note } = req.body;
+
+  try {
+    const workSession = await WorkSession.findById(sessionId);
+    if (!workSession) {
+      return res.status(404).json({ message: 'Work session not found' });
+    }
+
+    workSession.note = note; // Add or update the note
+    await workSession.save();
+    res.status(200).json({ message: 'Note updated successfully', workSession });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
+  }
+});
+
+router.delete('/notes', async (req, res) => {
+  const { sessionId } = req.body;
+
+  try {
+    const workSession = await WorkSession.findById(sessionId);
+    if (!workSession) {
+      return res.status(404).json({ message: 'Work session not found' });
+    }
+
+    workSession.note = null; // Delete the note
+    await workSession.save();
+    res.status(200).json({ message: 'Note deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
+  }
+});
+
 export default router;
