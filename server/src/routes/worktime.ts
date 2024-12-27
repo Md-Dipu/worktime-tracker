@@ -46,4 +46,13 @@ router.post('/stop', authenticate, async (req, res) => {
   }
 });
 
+router.get('/logs', authenticate, async (req, res) => {
+  try {
+    const logs = await WorkSession.find({ userId: req.user.id });
+    res.status(200).json(logs);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 export default router;
