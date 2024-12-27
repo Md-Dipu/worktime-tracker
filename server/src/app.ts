@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import 'colors';
 
 import authRoutes from './routes/auth';
+import worktimeRoutes from './routes/worktime';
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/worktime', worktimeRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI as string)
