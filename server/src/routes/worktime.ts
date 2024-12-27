@@ -28,4 +28,22 @@ router.post('/start', authenticate, async (req, res) => {
   }
 });
 
+router.post('/stop', authenticate, async (req, res) => {
+  try {
+    const session = await WorkSession.findOne({
+      userId: req.user.id,
+      endTime: null,
+    });
+    if (!session) return res.status(404).json({ error: 'No active session' });
+
+    session.endTime = new Date();
+    session.duration =
+      (session.endTime.getTime() - session.startTime.getTime()) / 60000; // minutes
+    await session.save();
+    res.status(200).json(session);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 export default router;

@@ -2,6 +2,7 @@ import { Command } from 'commander';
 import dotenv from 'dotenv';
 
 import startCommand from './commands/start';
+import stopCommand from './commands/stop';
 
 dotenv.config();
 
@@ -16,5 +17,10 @@ program
   .command('start')
   .description('Start a work session')
   .action(startCommand);
+
+program
+  .command('stop')
+  .description('Stop the current work session')
+  .action(stopCommand);
 
 program.parse(process.argv);
