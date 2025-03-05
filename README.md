@@ -1,5 +1,11 @@
 # **Worktime Tracker Application**
 
+![GitHub license](https://img.shields.io/github/license/Md-Dipu/worktime-tracker)
+![GitHub version](https://img.shields.io/github/package-json/v/Md-Dipu/worktime-tracker)
+![GitHub stars](https://img.shields.io/github/stars/Md-Dipu/worktime-tracker)
+![GitHub forks](https://img.shields.io/github/forks/Md-Dipu/worktime-tracker)
+![GitHub issues](https://img.shields.io/github/issues/Md-Dipu/worktime-tracker)
+
 ## **Overview**
 
 The **Worktime Tracker** is a client-server application designed to track work sessions, store work logs, and manage user data. It allows users to start, stop, and view their work sessions via a command-line interface (CLI). The backend is powered by an Express.js API, while MongoDB is used to store session data and user information.
